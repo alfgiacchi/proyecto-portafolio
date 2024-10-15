@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal - {% block title%} {% endblock%} </title>
+</head>
+
+<body>
+    <!--Cabecera-- debe hacer un extends en cada html para incrustar esto q se repite en todas las paginas-->
+    <h1>Mi Portoflio Personal</h1>
+    
+    <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'abaut' %}">Abaut</a></li>
+        <li><a href="{% url 'portfolio' %}">Portoflio</a></li>
+        <li><a href="{% url 'contact' %}">Contacto</a></li>
+    </ul>
+    <!--Contenido- TEMPLATE TAGS-->
+    {% block Content %} {% endblock %}
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,38 @@
+{% extends 'core/base.html'%}
+
+{% block title %} Portfolio {% endblock%}
+
+{% block img-header %} portfolio {% endblock%}
+
+{% block title-header %} 
+    <div>
+        <h1 class="display-4 fw-bold">Portafolio</h1>
+    </div>
+    <div>
+        <h3 class="fs-2">Desarrollos Realizados</h3>
+    </div>
+{% endblock%}
+
+{% block content %}
+
+{% load static %}
+
+{% for projects in project %}
+            <!-- Proyecto -->
+            <div class="row project mb-5">  	
+                <div class="col-lg-3 col-md-4 offset-lg-1">
+                    <img class="img-fluid" src="{{ projects.image.url }}" alt="abaut">
+                </div>
+              <div class="col-lg-7 col-md-8">
+                    <h2 class="section-heading title">{{ projects.title }}</h2>   
+                <p> {{ projects.description }}</p>
+                {% if projects.link %}
+                    <p class='btn btn-sm btn-success' ><a href="http://google.com">Más información</a></p>
+                {% else %}
+                    <p class='btn btn-sm btn-warning' >En desarrollo</p>
+                {% endif %}
+                </div>
+            </div>
+{% endfor %}
+
+{% endblock %}
